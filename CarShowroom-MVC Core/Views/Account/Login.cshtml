@@ -1,0 +1,38 @@
+﻿@model CarShowroom.ViewModel.LoginViewModel
+
+@{
+    ViewData["Title"] = "Log in";
+    Layout = "_LayoutLogin";
+}
+
+
+
+<div class="container">
+
+    <form class="login-form" method="post">
+        <div class="login-wrap">
+            <p class="login-img"><i class="icon_lock_alt"></i></p>
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="icon_profile"></i></span>
+                <input asp-for="Email" class="form-control" placeholder="Username" autofocus>
+
+            </div>
+            <span asp-validation-for="Email" class="text-danger"></span>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="icon_key_alt"></i></span>
+                <input asp-for="Password" class="form-control" placeholder="Password">
+
+            </div>
+            <span asp-validation-for="Password" class="text-danger"></span>
+            <label class="checkbox">
+                <input asp-for="RememberMe" value="remember-me"> @Html.DisplayNameFor(m => m.RememberMe)
+
+            </label>
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
+            <button class="btn btn-info btn-lg btn-block" type="submit" asp-action="Register" asp-controller="Account">Signup</button>
+        </div>
+    </form>
+
+</div>
+
